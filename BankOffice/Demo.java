@@ -61,7 +61,8 @@ public class Demo {
 		
 		Credit homeCredit = new Credit("Home Credit", 6);
 		Credit consumerCredit =  new Credit("Consumer Credit", 10);
-
+		//TODO add credits for all clients
+		
 	}
 
 }
