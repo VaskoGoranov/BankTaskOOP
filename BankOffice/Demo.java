@@ -34,7 +34,7 @@ public class Demo {
 		
 		Deposit shortDep = new Deposit("Short Deposit", 3, 3);
 		Deposit longDep = new Deposit("Long Deposit", 5, 12);
-		
+		// Koliu e MEGA pich
 				
 		for (Client e : klienti) {
 			Random r = new Random();
