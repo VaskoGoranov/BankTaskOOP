@@ -57,7 +57,7 @@ public class Bank {
 	
 	public void approveCredit (Client client, Credit type, double amount, int period) {
 		if(period>0) {
-			if(this.cash-amount>=vault) {
+			if(this.cash-amount>=vault && client.applyForCredit(this, type, amount, period)) {
 				this.cash -= amount;
 				client.setMoney(client.getMoney()+amount);
 				type.setAvailability(amount);

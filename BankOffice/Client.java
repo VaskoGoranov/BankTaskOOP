@@ -19,8 +19,18 @@ public class Client {
 		this.salary = salary;
 	}
 	
-	public void applyForCredit (Bank bank, Credit type, double amount, int period) {
-		bank.approveCredit(this, type, amount, period);
+	public boolean applyForCredit (Bank bank, Credit type, double amount, int period) {
+		int allFees = 0;
+		for (Credit cred : credits) {
+			allFees += cred.getMonthlyFee();
+		}
+		if(allFees < this.salary/2){
+
+			return true;
+		} else {
+			System.out.println("Salary too small!");
+			return false;
+		} 
 	}
 	
 	public void addCredit (Credit credit) {

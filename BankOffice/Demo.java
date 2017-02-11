@@ -32,10 +32,6 @@ public class Demo {
 		klienti.add(gosho);
 		klienti.add(milena);
 		
-		Deposit shortDep = new Deposit("Short Deposit", 3, 3);
-		Deposit longDep = new Deposit("Long Deposit", 5, 12);
-		
-				
 		for (Client e : klienti) {
 			Random r = new Random();
 			boolean type = r.nextBoolean();
@@ -45,25 +41,11 @@ public class Demo {
 				allianz.takeDeposit(e, new Deposit("Long Deposit", 5, 12), e.getMoney()*((r.nextInt(20)+80))/100);
 			}
 		}
-
 		
-//		for (Client e : klienti) {
-//			Random r = new Random();
-//			boolean type = r.nextBoolean();
-//			if (type){
-//				allianz.takeDeposit(e, shortDep, e.getMoney()*((r.nextInt(20)+80))/100);
-//			} else {
-//				allianz.takeDeposit(e, longDep, e.getMoney()*((r.nextInt(20)+80))/100);
-//			}
-//		}
 		System.out.println("========================================");
 		allianz.bankInfo();		
 		allianz.payDividend();
 		allianz.bankInfo();
-		
-		
-		Credit homeCredit = new Credit("Home Credit", 6);
-		Credit consumerCredit =  new Credit("Consumer Credit", 10);
 		
 		for (Client e : klienti) {
 			Random r = new Random();
@@ -74,15 +56,6 @@ public class Demo {
 				allianz.approveCredit(e, new Credit("Consumer Credit", 10), 5000, 24);
 			}
 		}
-//		for (Client e : klienti) {
-//			Random r = new Random();
-//			boolean type = r.nextBoolean();
-//			if (type) {
-//				allianz.approveCredit(e, homeCredit, 2000, 6);
-//			} else {
-//				allianz.approveCredit(e, consumerCredit, 5000, 24);
-//			}
-//		}
 		
 		allianz.collectCredits();
 		
