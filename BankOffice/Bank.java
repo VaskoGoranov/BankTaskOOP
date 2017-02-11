@@ -45,13 +45,26 @@ public class Bank {
 		
 	}
 	
+	public void collectCredits () {
+		
+		for (Client e : clients) {
+			for (Credit cred : e.getCredits()) {
+				this.cash += cred.getMonthlyFee();
+				cred.setAvailability(cred.getAvailability()-cred.getMonthlyFee());
+			}
+		}
+	}
+	
 	public void approveCredit (Client client, Credit type, double amount, int period) {
 		if(period>0) {
 			if(this.cash-amount>=vault) {
 				this.cash -= amount;
 				client.setMoney(client.getMoney()+amount);
+				type.setAvailability(amount);
 				type.setPeriod(period);
+				type.initMonthlyFee();
 				client.addCredit(type);
+				clients.add(client);
 				
 			}
 		}

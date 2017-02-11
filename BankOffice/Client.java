@@ -73,14 +73,14 @@ public class Client {
 		System.out.println("Name: " + this.name);
 		System.out.println("Available money : " + this.money);
 		System.out.println("Salary : " + this.salary);
-		System.out.println("Deposit list: ");
 		for (Deposit dep : this.deposits) {
 			System.out.println("----------------------------------");
 			dep.info();
 		}
-//		for (Credit cred : this.credits) {
-//			cred.info();
-//		}
+		for (Credit cred : this.credits) {
+			System.out.println("----------------------------------");
+			cred.info();
+		}
 	}
 
 	@Override

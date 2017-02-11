@@ -13,15 +13,15 @@ public class Deposit extends BankAccounts {
 	}
 
 
-	public double initMonthlyPayment() {
+	public void initMonthlyPayment() {
 		monthlyPayment = (this.getAvailability()*this.getInterest()/100)/this.getPeriod();
-		return monthlyPayment;
+		
 	}
 	
 	public void info () {
 		System.out.println("Dep name: " + this.name);
-		System.out.println("Dep availability: " + this.availability);
-		System.out.println("Dep monthly payment: " + this.monthlyPayment);
+		System.out.println("    availability: " + this.availability);
+		System.out.println("    monthly payment: " + this.monthlyPayment);
 	}
 
 
@@ -31,7 +31,6 @@ public class Deposit extends BankAccounts {
 
 	public void setAvailability(double amount) {
 		this.availability = amount;
-		
 	}
 
 
